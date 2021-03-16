@@ -14,8 +14,11 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    let series = getService.getSomeSeries();
-    this.setState({ series });
+    getService.getSomeSeries()
+      .then((series) => {
+        return this.setState({ series })
+      })
+      .catch(err => console.log(err.message));
   }
   render() {
     return (
