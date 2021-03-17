@@ -11,6 +11,6 @@ const ListSeries = function ({ series }) {
                 </a>
             })}
         </div>
-    )
+    );
 }
 export default ListSeries;

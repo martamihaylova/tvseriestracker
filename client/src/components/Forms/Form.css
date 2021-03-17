@@ -37,3 +37,11 @@ form {
     color: #673D7E;
     text-decoration: underline;
   }
+
+  .form-inputs {
+    display: inline;
+  }
+  .register-link {
+    cursor: pointer;
+    color: aqua;
+  }

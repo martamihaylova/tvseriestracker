@@ -1,10 +1,10 @@
-import './Form';
+import './Form.css';
 
 const Register = () => {
     return (
         <div id="registerForm">
             <h1>Register</h1>
-            <form action="/register" method="POST">
+            <form className="form-inputs" action="/register" method="POST">
                 <label>Username</label>
                 <input type="text" name="username" id="registerUsername" />
                 <label>Email</label>
