@@ -10,7 +10,8 @@ module.exports = (app) => {
 
     app.use('/static', express.static('static'));
     
-    app.use(express.urlencoded({ extended: true }))
+    // app.use(express.urlencoded({ extended: true }));
+    app.use(express.json()); // FOR REST API!
     
     app.use(cookieParser());
     

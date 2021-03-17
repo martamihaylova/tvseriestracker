@@ -1,8 +1,8 @@
-const userController = require('../controllers/userController.js');
+const authController = require('../controllers/authController.js');
 
 module.exports = (app) => {
     // TODO...
-    app.use('/user', userController);
+    app.use('/auth', authController);
     app.get('*', (req, res) => {
         res.send('404');
     });

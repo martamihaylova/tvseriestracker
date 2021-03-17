@@ -27,23 +27,19 @@ initPassport(passport,
 
 router.get('/logout', check.ifLoged, (req, res) => {
     req.logOut();
-    res.redirect('/user/login');
+    return res.status(200).json({ok: true});
 });
-router.get('/login', check.ifNotLoged, (req, res) => {
-    // res.render('login', { title: 'Login' });
-});
+
 router.post('/login', check.ifNotLoged, passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/user/login',
+    failureRedirect: '/auth/login',
     failureFlash: true
 }));
-router.get('/register', check.ifNotLoged, (req, res) => {
-    // res.render('register', { title: 'Register' });
-});
+
 router.post('/register', check.ifNotLoged, (req, res) => {
     let { email, username, password, rePassword } = req.body;
     if (password !== rePassword || !validator.isEmail(email) || !validator.isAlphanumeric(username)) {
-        // res.render('register', { messages: { error: 'Missmatch passwords, invalid email or username' }, title: 'Register' });
+        res.json({ messages: { error: 'Missmatch passwords, invalid email or username' }, title: 'Register' });
     } else {
         register(email, username, password, req, res);
     }

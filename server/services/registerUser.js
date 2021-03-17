@@ -8,7 +8,7 @@ function register(email, name, password, req, res) {
         .then((data) => {
             console.log(data);
             let found = data.find((x) => x?.username.toLowerCase() === name.toLowerCase());
-            // if (found) res.render('register', { messages: { error: 'Username allready exists.Please try again.' }, title: 'Register' });
+            if (found) res.json({ messages: { error: 'Username allready exists.Please try again.' }, title: 'Register' });
         });
 
     bcrypt.hash(password, SALT_ROUNDS)
@@ -24,17 +24,17 @@ function register(email, name, password, req, res) {
                     res.locals.user = user;
                     req.login(user, function (err) {
                         if (err) { return next(err); }
-                        return res.redirect('/');
+                        return res.status(201).json({ user });
                     });
                 })
                 .catch((error) => {
                     console.log(error.message);
-                    // return res.render('register', { messages: { error: error.message }, title: 'Register' });
+                    return res.json({ messages: { error: error.message }, title: 'Register' });
                 });
         })
         .catch((err) => {
             console.log(err.message);
-            // res.render('register', { messages: { error: 'Unsuccessful reristration.Please try again.' }, title: 'Register' });
+            res.json({ messages: { error: 'Unsuccessful reristration.Please try again.' }, title: 'Register' });
         });
 
 }
