@@ -1,5 +1,6 @@
-.added-hotel {
+.random-series {
     /* color: black; */
+    text-decoration: none;
     cursor: pointer;
     width: 400px;
     border: 2px solid blue;
@@ -14,20 +15,24 @@
     flex-basis: 25%;
 }
 
-.picture-added-hotel {
+.picture-random-series {
     width: 200px;
     height: 270px;
     margin-top: 20px;
     border-radius: 20%;
 }
 
-.picture-added-hotel:hover {
+.picture-random-series:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
 
-.added-hotels {
+.random-shows {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.random-series h3 {
+    text-decoration: underline;
 }

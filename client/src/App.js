@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <a href="/"><img  src={logo} className="App-logo" alt="logo" /></a>
+          <Link to="/"><img  src={logo} className="App-logo" alt="logo" /></Link>
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />

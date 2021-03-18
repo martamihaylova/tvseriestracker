@@ -1,4 +1,5 @@
 import './Form.css';
+import { Link } from 'react-router-dom';
 
 const Login = function () {
 
@@ -12,7 +13,7 @@ const Login = function () {
                 <input type="text" name="email" id="registerEmail" />
                 <label>Password</label>
                 <input type="password" name="password" id="loginPassword" />
-                <p>Are you new here? <a href="/register" className="register-link">Register</a> yourself!</p>
+                <p>Are you new here? <Link to="/register" className="register-link">Register</Link> yourself!</p>
                 <input type="submit" value="Login" />
             </form>
         </div>

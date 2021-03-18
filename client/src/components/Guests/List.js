@@ -1,14 +1,15 @@
 import './List.css';
+import { Link } from 'react-router-dom';
 
 const ListSeries = function ({ series }) {
     return (
-        <div className="added-hotels">        
+        <div className="random-shows">
             {series.map(x => {
-                return <a key={x?.id} href="/login" className="added-hotel">
-                    <img src={x.image?.medium} alt=" Shame on DB" className="picture-added-hotel"/>
-                    <h4>{x?.name}</h4>
-                    <span>{x?.genres.join(', ')}</span>
-                </a>
+                return <Link key={x?.id} to="/login" className="random-series">
+                    <img src={x.image?.medium} alt=" Shame on DB" className="picture-random-series" />
+                    <h3>{x?.name}</h3>
+                    <span>{x?.genres?.join(', ')}</span>
+                </Link>
             })}
         </div>
     );
