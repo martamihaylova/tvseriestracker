@@ -1,25 +1,26 @@
 .random-series {
-    /* color: black; */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     text-decoration: none;
     cursor: pointer;
     width: 400px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     text-align: center;
-    background: cornflowerblue;
-    padding-bottom: 10px;
-    border-radius: 10px;
+    /* background: cornflowerblue; */
+    /* padding-bottom: 10px; */
+    border-radius: 25px;
     margin-left: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     margin-top: 10px;
     height: 500px;
     flex-basis: 25%;
 }
 
 .picture-random-series {
-    width: 200px;
-    height: 270px;
+    width: 330px;
+    height: 500px;
     margin-top: 20px;
-    border-radius: 20%;
+    border-radius: 25%;
 }
 
 .picture-random-series:hover {
@@ -34,5 +35,24 @@
 }
 
 .random-series h3 {
+    margin: auto;
+    opacity: 100%;
     text-decoration: underline;
+}
+.text-warp{
+    font-size: calc(8px + 2vmin);
+    text-size-adjust: 80%;
+    font-weight: bold;
+    color: darkblue;
+    position: absolute;
+    bottom: 10%;
+    background-color: antiquewhite;
+    opacity: 0.7;
+    width: 250px;
+    text-align: center;
+    border-radius: 25px;
+    margin-left: 30px;
+    height: 140px;
+    align-items: center;
+    /* flex-basis: 25%; */
 }

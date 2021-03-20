@@ -5,7 +5,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: calc(50px + 2vmin);
+    justify-content: center;  
     background-image: url("./background3.jpg");
+}
+
+.home-logo-text{
+    margin-left: 45%;
+}
+
+.home-logo-text #tracker{
+    color: darkblue;
 }

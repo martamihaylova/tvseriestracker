@@ -5,10 +5,11 @@ const ListSeries = function ({ series }) {
     return (
         <div className="random-shows">
             {series.map(x => {
-                return <Link key={x?.id} to="/login" className="random-series">
-                    <img src={x.image?.medium} alt=" Shame on DB" className="picture-random-series" />
-                    <h3>{x?.name}</h3>
-                    <span>{x?.genres?.join(', ')}</span>
+                return <Link key={x?.id} to="/details" className="random-series" style={{backgroundImage: `url("${x.image?.original}")`}}>
+                        <div className="text-warp">
+                            <h3>{x?.name}</h3>
+                            <span>{x?.genres?.join(', ')}</span>
+                        </div>
                 </Link>
             })}
         </div>

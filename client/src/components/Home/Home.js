@@ -1,12 +1,13 @@
 import { Component } from 'react';
 import './Home.css';
 
+import Navigation from '../Navigation/Navigation';
 import List from '../List/List';
 import Logotext from '../Logo/LogoText';
 // import Login from './components/Forms/LoginForm';
 // import Register from './components/Forms/RegisterForm';
-import * as getService from '../../services/getSeries';
 // import register from './services/register';
+import * as getService from '../../services/getSeries';
 
 
 
@@ -22,19 +23,24 @@ class Home extends Component {
         console.log(this.state);
         getService.getSomeSeries()
             .then((series) => {
-                return this.setState({ parentHover: false })
+                return this.setState({ series })
             })
             .catch(err => console.log(err.message));
     }
 
     render() {
         return (
-            <div className="home-page">
-                <Logotext/>
-                {/* <Route path="/login" component={Login} />
+            // <Fragment>
+                <div className="home-page">
+                   <Navigation />
+                    <div className="home-logo-text">
+                        <Logotext />
+                    </div>
+                    {/* <Route path="/login" component={Login} />
                 {<Route path="/register" component={Register} /> */}
-                <List series={this.state.series} />
-            </div>
+                    <List series={this.state.series} />
+                </div>
+            // </Fragment>
         )
     }
 }

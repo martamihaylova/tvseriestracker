@@ -9,16 +9,18 @@ class Start extends Component {
         super();
         this.state = {
             parentHover: false
-          }
+        }
     }
     changeBackground() {
         this.state.parentHover ? this.setState({ parentHover: false }) : this.setState({ parentHover: true });
-      }
-    render(){
+    }
+    render() {
         return (
-            <header  className="App-header" id={this.state.parentHover ? "background2" : "background1"} >
-                 <Link to="/home" onMouseOver={this.changeBackground.bind(this)} onMouseOut={this.changeBackground.bind(this)}><Logo /></Link>
-            <Logotext />
+            <header className="App-header" id={this.state.parentHover ? "background2" : "background1"} >
+                <Link to="/home" onMouseOver={this.changeBackground.bind(this)} onMouseOut={this.changeBackground.bind(this)}><Logo /></Link>
+                <div className="start-logo-text">
+                    <Logotext />
+                </div>
             </header>
         )
     }

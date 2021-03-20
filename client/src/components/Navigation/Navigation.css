@@ -1,0 +1,29 @@
+.navigation-box{   
+    /* text-size-adjust: 80%;
+    font-weight: bold; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: flex;
+    background-color: white;
+    width: 700px;
+    text-align: center;
+    border-radius: 25px;
+    margin-left: 40%;
+    height: 90px;
+    align-items: center; 
+}
+
+.nav-list{
+    /* text-size-adjust: 80%; */
+    font-weight: bold;
+    font-size: calc(8px + 2vmin);
+    color: darkblue;
+    text-decoration: none;
+    cursor: pointer;
+}
+.navigation-box span{
+   background-color:lightgray;
+   width: 3px;
+   height: 90px;
+   
+}

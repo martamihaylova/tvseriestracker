@@ -1,6 +1,7 @@
 .logo-text{
-    position: absolute;
-    bottom: 5%;
+    font-size: calc(50px + 2vmin);
+    /* position: absolute;
+    bottom: 5%; */
     text-decoration: none;
   }
   #handwriting{
@@ -12,6 +13,5 @@
   #tracker{
     font-family: 'Bebas Neue', cursive;
     font-weight: bold;
-    color: #fff;
   }
   

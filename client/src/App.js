@@ -6,12 +6,12 @@ import Start from './components/Start/Start';
 import Home from './components/Home/Home';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      series: []
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     series: []
+  //   }
+  // }
 
   render() {
     return (

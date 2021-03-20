@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
     font-size: calc(50px + 2vmin);
+    /* bottom: 20%; */
   }
 #background1{
     background-image: url("./background1.jpg");
@@ -14,4 +15,12 @@
 #background2{
     background-image: url("./background2.jpg");
   }
-  
+
+.start-logo-text{
+  position: absolute;
+  bottom: 5%;
+}
+ 
+.start-logo-text #tracker{
+  color: #fff;
+}
