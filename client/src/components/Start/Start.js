@@ -17,7 +17,7 @@ class Start extends Component {
     render() {
         return (
             <header className="App-header" id={this.state.parentHover ? "background2" : "background1"} >
-                <Link to="/home" onMouseOver={this.changeBackground.bind(this)} onMouseOut={this.changeBackground.bind(this)}><Logo /></Link>
+                <Link to="/guest" onMouseOver={this.changeBackground.bind(this)} onMouseOut={this.changeBackground.bind(this)}><Logo /></Link>
                 <div className="start-logo-text">
                     <Logotext />
                 </div>

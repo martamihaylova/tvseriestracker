@@ -4,26 +4,22 @@
     text-decoration: none;
     cursor: pointer;
     width: 400px;
-    /* border: 2px solid blue; */
     text-align: center;
-    /* background: cornflowerblue; */
-    /* padding-bottom: 10px; */
     border-radius: 25px;
     margin-left: 20px;
-    /* margin-bottom: 20px; */
     margin-top: 10px;
     height: 500px;
     flex-basis: 25%;
 }
 
-.picture-random-series {
+/* .picture-random-series {
     width: 330px;
     height: 500px;
     margin-top: 20px;
     border-radius: 25%;
-}
+} */
 
-.picture-random-series:hover {
+.random-series:hover {
     cursor: pointer;
     transform: scale(1.1);
 }

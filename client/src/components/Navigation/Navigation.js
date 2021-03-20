@@ -10,7 +10,7 @@ class Navigation extends Component {
     render() {
         return (
             <div className="navigation-box">
-                <Link to="/home" className="nav-list">Home</Link>
+                <Link to="/" className="nav-list">Home</Link>
                 <span></span>
                 <Link to="/serch" className="nav-list">Search</Link>
                 <span></span>

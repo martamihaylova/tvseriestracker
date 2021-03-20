@@ -29,18 +29,16 @@ class Home extends Component {
     }
 
     render() {
-        return (
-            // <Fragment>
+        return (      
                 <div className="home-page">
                    <Navigation />
                     <div className="home-logo-text">
                         <Logotext />
                     </div>
                     {/* <Route path="/login" component={Login} />
-                {<Route path="/register" component={Register} /> */}
+                    {<Route path="/register" component={Register} /> */}
                     <List series={this.state.series} />
-                </div>
-            // </Fragment>
+                </div>      
         )
     }
 }

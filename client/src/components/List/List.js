@@ -5,6 +5,7 @@ const ListSeries = function ({ series }) {
     return (
         <div className="random-shows">
             {series.map(x => {
+                console.log(x);
                 return <Link key={x?.id} to="/details" className="random-series" style={{backgroundImage: `url("${x.image?.original}")`}}>
                         <div className="text-warp">
                             <h3>{x?.name}</h3>

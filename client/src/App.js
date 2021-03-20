@@ -3,6 +3,7 @@ import { Route, Link, NavLink, Redirect, Switch } from 'react-router-dom';
 
 import './App.css';
 import Start from './components/Start/Start';
+import Guest from './components/Guest/Guest';
 import Home from './components/Home/Home';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route path="/" component={Start} exact/>
+          <Route path="/guest" component={Guest} exact/>
           <Route path="/home" component={Home} exact/>    
         </Switch>
       </div>
