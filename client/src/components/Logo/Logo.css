@@ -1,0 +1,61 @@
+
+.logo-container {
+  height: 40vmin;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 411.4px;
+  height: 411.4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .react-logo {
+    animation: react-logo-spin infinite 20s linear;
+  }
+}
+
+.react-logo {
+  position: relative;
+  width: 411.4px;
+  height: 411.4px;
+}
+
+.react-logo__ellipse {
+  position: absolute;
+  width: 408.8px;
+  height: 120.4px;
+  left: 0px;
+  top: 142.9px;
+  border: 4.6px solid #3C3D5A;
+  border-radius: 50%;
+  border-color: #3C3D5A;
+}
+
+.react-logo:hover > .react-logo__ellipse{
+  border: 3.6px solid white;
+  border-color: white;
+} 
+
+.react-logo__ellipse_2 {
+  transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+}
+.react-logo__ellipse_3 {
+  transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -webkit-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+}
+
+@keyframes react-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

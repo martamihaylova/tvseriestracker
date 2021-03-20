@@ -1,0 +1,17 @@
+.logo-text{
+    position: absolute;
+    bottom: 5%;
+    text-decoration: none;
+  }
+  #handwriting{
+    font-family: 'Bilbo', cursive;
+    font-weight: bolder;
+    color: black;
+  }
+  
+  #tracker{
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bold;
+    color: #fff;
+  }
+  
