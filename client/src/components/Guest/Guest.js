@@ -14,13 +14,14 @@ class Guest extends Component {
     }
     componentDidMount() {
         console.log(this.state);
-        getService.getSomeSeries()
+        getService.getRandom()
             .then((series) => {
                 return this.setState({ series })
             })
             .catch(err => console.log(err.message));
     }
     render() {
+
         let num = 0;
         return (
             <div className="guest-view">
@@ -29,9 +30,8 @@ class Guest extends Component {
                 </div>
                 <div className="cards">
                     {this.state.series.map(x => {
-                        return <Link key={x?.id} to="/home" >
-                            <div className="card" id={'c' + (num = num + 1)} style={{backgroundImage: `url("${x.image?.original}")`}}>
-                           
+                        return <Link key={x?.id} to="/login" >
+                            <div className="card" id={'c' + (num = num + 1)} style={{ backgroundImage: `url("${x.image?.original}")` }}>
                             </div>
                         </Link>
                     })}

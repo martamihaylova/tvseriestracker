@@ -1,0 +1,23 @@
+.trackbtn{
+    font-size: calc(15px + 2vmin);
+    font-family: 'Bebas Neue', cursive;
+    color: darkblue;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    opacity: 0.7;
+    width: 150px;
+    height: 70px;
+    cursor: pointer;
+    font-weight: bolder;
+    border-radius: 25px;
+    margin-left: 30px;
+    margin-top: 110%;
+    text-transform: none;
+}
+#text{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 10%;
+}

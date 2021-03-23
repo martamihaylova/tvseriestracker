@@ -14,9 +14,9 @@ class Navigation extends Component {
                 <span></span>
                 <Link to="/serch" className="nav-list">Search</Link>
                 <span></span>
-                {/* <Link to="/login" className="nav-list">Login</Link>
+                <Link to="/login" className="nav-list">Login</Link>
                 <span></span>
-                <Link to="/register" className="nav-list">Register</Link>
+                {/* <Link to="/register" className="nav-list">Register</Link>
                 <span></span> */}
                 <Link to="/account" className="nav-list">Pesho's TV Shows</Link>
                 <span></span>

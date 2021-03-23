@@ -3,9 +3,13 @@ form {
     width: 25%;
     margin: 0 auto;
     text-align: center;
-    color: white;
+    color: blueviolet;
     font-weight: bold;
   }
+h1{
+  color: #673D7E;
+  text-align: center;
+}
   
   input[type="text"],
   input[type="password"],
@@ -15,7 +19,7 @@ form {
     margin: 5px;
     border-radius: 10px;
     outline: none;
-    border: 1px solid white;
+    border: 1px solid black;
   }
   
   input[type="submit"],
@@ -38,9 +42,9 @@ form {
     text-decoration: underline;
   }
 
-  .form-inputs {
+  /* .form-inputs {
     display: inline;
-  }
+  } */
   .register-link {
     cursor: pointer;
     color: aqua;
