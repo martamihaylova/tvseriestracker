@@ -11,11 +11,11 @@
     justify-content: center;  
 }
 
-.logo-text{
-    margin-top: -150px;
-}
+.details-logo-text{
+    margin-top: 150px;
+} 
 
-.logo-text #tracker{
+.logo-text .tracker{
     color: #3B4CE3;
 }
 
@@ -36,8 +36,11 @@
     background-size: 100% 100%;
     text-decoration: none;
     width: 210px;
+    /* margin-top: -10%; */
     margin-left: -5%;
     height: 320px;
+    /* flex-basis: 25%; */
+    box-shadow: 15px 20px 20px #363636;
 }
 
 #summary{
@@ -69,7 +72,7 @@
     padding: 5px;
     font-size: 20px;
     font-style: italic;
-    margin-top: 5%;
+    margin-top: 300px;
 }
 
 #site-link{

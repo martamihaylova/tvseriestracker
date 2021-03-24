@@ -4,7 +4,7 @@ const Text = function () {
    return (
    <div className="logo-text">
         <span id="handwriting">tv series</span>
-        <strong id="tracker">TRACKER</strong>
+        <strong className="tracker" id="tracker">TRACKER</strong>
     </div>
    )
 }

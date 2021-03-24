@@ -1,4 +1,4 @@
-import { baseSeriesUrl } from './api'
+import { baseSeriesUrl, searchUrl } from './api'
 
 export const getRandom = () => {
     let series = [];
@@ -15,5 +15,13 @@ export const getOne = (id) => {
         .then((res) => {
             return res.json()
         })
+        .catch((err) => console.log(err));
+}
+export const handleSearch = (e) => {
+    e.preventDefault();
+        console.log(e.target.keyword.value)
+    return fetch(searchUrl + e.target.keyword.value)
+        .then((res) => res.json())
+        .then((res) => console.log(res))
         .catch((err) => console.log(err));
 }

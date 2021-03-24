@@ -20,7 +20,7 @@ const Details = ({ match }) => {
     return (
         <div className="details-view">
             <Navigation />
-            <div className="logo-text">
+            <div className="details-logo-text">
                 <Logotext />
             </div>
             <div className="divs">

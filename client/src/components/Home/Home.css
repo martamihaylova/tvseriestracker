@@ -10,9 +10,12 @@
 }
 
 .home-logo-text{
-    margin-left: 45%;
+    position: absolute;
+    display: flex;
+    top: 150px; 
+    margin-right: -800px;
 }
 
-.home-logo-text #tracker{
+.home-logo-text .tracker{
     color: darkblue;
 }

@@ -1,13 +1,24 @@
+#loginForm, #registerForm{
+  background-image: url('../Start/background2.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  font-size: 20px;
+}
 form {
     display: grid;
     width: 25%;
     margin: 0 auto;
     text-align: center;
-    color: blueviolet;
+    color: white;
     font-weight: bold;
   }
 h1{
-  color: #673D7E;
+  color: #254051;
   text-align: center;
 }
   
@@ -25,7 +36,7 @@ h1{
   input[type="submit"],
   button {
     border: 2px solid #CEBED7;
-    background: #673D7E;
+    background: #254051;
     background-position: center;
     background-size: cover;
     color: white;
@@ -36,9 +47,9 @@ h1{
   }
   
   input[type="submit"]:hover {
-    border: 2px solid #673D7E;
-    background: #CEBED7;
-    color: #673D7E;
+    border: 2px solid darkblue;
+    background: lightblue;
+    color: darkblue;
     text-decoration: underline;
   }
 
@@ -47,5 +58,5 @@ h1{
   } */
   .register-link {
     cursor: pointer;
-    color: aqua;
+    color: darkblue;
   }
