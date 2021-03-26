@@ -1,13 +1,23 @@
-import './SearchForm.css'
-import * as getServis from '../../services/getSeries';
+import './SearchForm.css';
+import { withRouter } from 'react-router-dom';
+// import { useEffect, useState } from 'react';
+// import * as getServis from '../../services/getSeries';
 
-const Searchform = () => {
+const Searchform = (props) => {
+    let keyword = '';
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        keyword = e.target.keyword.value;
+        props.match.params = { keyword };
+        return props.history.push(`/home/search/${keyword}`);
+    }
     return (
-        <form onSubmit={getServis.handleSearch} className="search-form">
+        <form onSubmit={handleSearch} className="search-form">
             <label htmlFor="keyword">Search word</label>
             <input type="text" name="keyword" id="keyword" />
             <input id="btn" type="submit" value="Search" />
         </form>
     )
 }
-export default Searchform;
+export default withRouter(Searchform);

@@ -73,11 +73,13 @@
     font-size: 20px;
     font-style: italic;
     margin-top: 300px;
+    cursor: pointer;
 }
 
 #site-link{
     margin-left: 5%;
-    margin-bottom: 30%;
+    /* margin-bottom: -30%; */
     color: white;
     align-items:baseline;
+    cursor: pointer;
 }

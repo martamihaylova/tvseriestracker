@@ -9,10 +9,10 @@ class Navigation extends Component {
 
     render() {
         return (
-            <div className="navigation-box" id="nav-box">
-                <Link to="/" className="nav-list">Home</Link>
+            <div className="navigation-box" >
+                <Link to="/home" className="nav-list">Home</Link>
                 <span></span>
-                <Link to="/home/serch" className="nav-list">Search</Link>
+                <Link to="/home/search" className="nav-list">Search</Link>
                 <span></span>
                 <Link to="/login" className="nav-list">My TV shows</Link>
                 <span></span>
@@ -20,7 +20,7 @@ class Navigation extends Component {
                 <span></span> */}
                 {/* <Link to="/account" className="nav-list">Wellcome Pesho</Link>
                 <span></span> */}
-                <Link to="/logout" className="nav-list">Logout</Link>
+                <Link to="/" className="nav-list">Logout</Link>
             </div>
 
         );

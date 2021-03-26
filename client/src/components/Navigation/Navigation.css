@@ -17,11 +17,11 @@
 
 .nav-list{
     /* text-size-adjust: 80%; */
+    cursor: pointer;
     font-weight: bold;
     font-size: calc(8px + 2vmin);
     color: darkblue;
     text-decoration: none;
-    cursor: pointer;
 }
 .navigation-box span{
    background-color:lightgray;

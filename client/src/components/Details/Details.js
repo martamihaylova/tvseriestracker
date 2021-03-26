@@ -9,14 +9,18 @@ import Trackbtn from '../Trackbtn/Trackbtn';
 import Infolist from '../Infolist/Infolist';
 
 
-const Details = ({ match }) => {
+const Details = (props) => {
     let [show, setShow] = useState({});
     useEffect(() => {
-        getService.getOne(match.params.id)
+        getService.getOne(props.match.params.id)
             .then(res => setShow(res));
-    }, [match]);
-    console.log(show);
-
+    }, [props.match]);
+    console.log(props);
+    let infoArray = [show.rating?.average,
+    show.network?.name,
+    show.network?.country.name,
+    show.premiered,
+    show.status];
     return (
         <div className="details-view">
             <Navigation />
@@ -29,12 +33,12 @@ const Details = ({ match }) => {
                 </span>
                 <span id="summary">{ReactHtmlParser(show.summary)}</span>
                 <div id="info">
-                <Infolist info={[show.rating?.average, show.network?.name, show.network?.country.name, show.premiered, show.status]} />
+                    <Infolist info={infoArray} />
                 </div>
             </div>
             <div className="official-site">
-                <a href={show.officialSite || 'https://www.tvmaze.com'} id="site-link">
-                    {show.officialSite || 'https://www.tvmaze.com'}
+                <a href={show.officialSite || show.url} id="site-link">
+                    {show.officialSite || show.url}
                 </a>
             </div>
         </div>

@@ -14,7 +14,7 @@ class Guest extends Component {
     }
     componentDidMount() {
         console.log(this.state);
-        getService.getRandom()
+        getService.getSeries()
             .then((series) => {
                 return this.setState({ series })
             })

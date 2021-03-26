@@ -2,14 +2,19 @@ import './List.css';
 import { Link } from 'react-router-dom';
 
 
-const ListSeries = function ({ series }) {
+const ListSeries = function ({series}) {
+    console.log(series);
+    let mapKey;
+ 
     return (
         <div className="random-shows">
             {series.map(x => {
-                return <Link key={x?.id} to={`/details/${x.id}`} className="random-series" data={x} style={{backgroundImage: `url("${x.image?.original}")`}}>
+               x.show ? mapKey = x.show : mapKey = x;
+               console.log(mapKey);
+                return <Link key={mapKey.id} to={`/details/${mapKey.id}`} className="random-series" style={{backgroundImage: `url("${mapKey.image?.original}")`}}>
                         <div className="text-warp">
-                            <h3>{x?.name}</h3>
-                            <span>{x?.genres?.join(', ')}</span>
+                            <h3>{mapKey.name}</h3>
+                            <span>{mapKey.genres?.join(', ')}</span>
                         </div>
                 </Link>
             })}
