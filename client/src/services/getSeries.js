@@ -1,7 +1,7 @@
 import { baseSeriesUrl, searchUrl } from './api'
 
 export const getSeries = (keyword = '') => {
-    if (keyword && keyword !== '') {
+    if (keyword !== '') {
         return fetch(searchUrl + keyword)
             .then((res) => res.json())
             .catch((err) => console.log(err));
@@ -24,11 +24,3 @@ export const getOne = (id) => {
         })
         .catch((err) => console.log(err));
 }
-// export const searchSeries = (keyword) => {
-//     if (keyword && keyword !== '') {
-//         return fetch(searchUrl + keyword)
-//             .then((res) => res.json())
-//             // .then((res) => console.log(res))
-//             .catch((err) => console.log(err));
-//     }
-// }

@@ -26,8 +26,8 @@ class App extends Component {
           <Route path="/home/search/:keyword" component={Home} />
           <Route path="/home" component={Home} />
           <Route path="/details/:id" component={Details} />
-          <Route path="/login" component={Login} exact />
-          <Route path="/register" component={Register} exact />
+          <Route path="/auth/login" component={Login} exact />
+          <Route path="/auth/register" component={Register} exact />
         </Switch>
       </div>
     );

@@ -1,23 +1,28 @@
 import './Form.css';
 import { Link } from 'react-router-dom';
+import * as userService from '../../services/userService';
 
-const Login = () => {
-    const handleLogin = (e) => {
+const Login = (props) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target.username.value);
-        
+        let { username, password } = e.target;
+        userService.login(username.value, password.value)
+            .then((res) => {
+                console.log(res);
+                // props.history.push('/home');
+            })
+            .catch((err) => console.log(err.message));
+
     };
     return (
-        <div id="loginForm">
+        <div id="loginForm" >
             <h1>Login</h1>
-            <form onSubmit={handleLogin} className="form-inputs">
+            <form className="form-inputs" onSubmit={handleSubmit} >
                 <label htmlFor="loginUsername">Username</label>
                 <input type="text" name="username" id="loginUsername" />
-                <label htmlFor="registerEmail">Email</label>
-                <input type="text" name="email" id="registerEmail" />
-                <label htmlFor="password">Password</label>
+                <label>Password</label>
                 <input type="password" name="password" id="loginPassword" />
-                <p>Are you new here? <Link to="/home" className="register-link">Register</Link> yourself!</p>
+                <p>Are you new here? <Link to="/auth/register" className="register-link">Register</Link> yourself!</p>
                 <input type="submit" value="Login" />
             </form>
         </div>

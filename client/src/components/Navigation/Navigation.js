@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Navigation.css'
+import './Navigation.css';
+import * as userService from '../../services/userService';
 
 class Navigation extends Component {
     // constructor(props) {
@@ -20,7 +21,7 @@ class Navigation extends Component {
                 <span></span> */}
                 {/* <Link to="/account" className="nav-list">Wellcome Pesho</Link>
                 <span></span> */}
-                <Link to="/" className="nav-list">Logout</Link>
+                <Link to="/" onClick={userService.logout} className="nav-list">Logout</Link>
             </div>
 
         );

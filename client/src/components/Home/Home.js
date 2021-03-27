@@ -11,7 +11,6 @@ import * as getService from '../../services/getSeries';
 
 class Home extends Component {
     constructor(props) {
-        console.log(props);
         super(props);
         this.state = {
             series: [],
@@ -28,8 +27,7 @@ class Home extends Component {
     }
     componentDidUpdate(prevProps, prevState) {
         let keyword = this.props.match.params.keyword;
-        if (keyword === prevState.keyword) {
-            console.log(prevState.keyword);
+        if (keyword === prevState.keyword || keyword === '' || !keyword) {
             return;
         }
         getService.getSeries(keyword)

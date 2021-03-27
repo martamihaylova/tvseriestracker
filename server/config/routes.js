@@ -4,6 +4,7 @@ module.exports = (app) => {
     // TODO...
     app.use('/auth', authController);
     app.get('*', (req, res) => {
-        res.send('404');
+        console.log(req.method);
+        res.status(404).json({message: 'Error'});
     });
 };

@@ -15,12 +15,13 @@ const Details = (props) => {
         getService.getOne(props.match.params.id)
             .then(res => setShow(res));
     }, [props.match]);
-    console.log(props);
+
     let infoArray = [show.rating?.average,
     show.network?.name,
     show.network?.country.name,
     show.premiered,
     show.status];
+    
     return (
         <div className="details-view">
             <Navigation />

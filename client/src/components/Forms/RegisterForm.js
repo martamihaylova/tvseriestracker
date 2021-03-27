@@ -1,23 +1,23 @@
 import { Component } from 'react';
 import './Form.css';
-// import register from '../../services/register';
+import * as userService from '../../services/userService';
 
 class Register extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = { value: '' };
-    //     this.handleChange = this.handleChange.bind(this);
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    // }
-    
-    // handleChange(event) {
-    //     this.setState({ value: event.target.value });
-    // }
-    
+    constructor(props) {
+        super(props);
+        //     this.state = { value: '' };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        console.log(e.target.username.value);
-     
+        let { username, email, password, rePassword } = e.target;
+        userService.register(username.value, email.value, password.value, rePassword.value)
+            .then((res) => {
+                console.log(res);
+                this.props.history.push('/auth/login');
+            })
+            .catch((err) => console.log(err.message));
     }
     render() {
         return (
@@ -31,7 +31,7 @@ class Register extends Component {
                     <label>Password</label>
                     <input type="password" name="password" id="registerPassword" />
                     <label>Repeat Password</label>
-                    <input type="password" name="repeatPassword" id="registerRepeatPassword" />
+                    <input type="password" name="rePassword" id="registerRepeatPassword" />
                     <input type="submit" value="Register" />
                 </form>
             </div>

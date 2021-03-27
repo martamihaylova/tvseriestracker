@@ -1,7 +1,6 @@
 import './SearchForm.css';
 import { withRouter } from 'react-router-dom';
-// import { useEffect, useState } from 'react';
-// import * as getServis from '../../services/getSeries';
+
 
 const Searchform = (props) => {
     let keyword = '';

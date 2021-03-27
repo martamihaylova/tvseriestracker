@@ -30,7 +30,7 @@ class Guest extends Component {
                 </div>
                 <div className="cards">
                     {this.state.series.map(x => {
-                        return <Link key={x?.id} to="/login" >
+                        return <Link key={x?.id} to="/auth/login" >
                             <div className="card" id={'c' + (num = num + 1)} style={{ backgroundImage: `url("${x.image?.original}")` }}>
                             </div>
                         </Link>
