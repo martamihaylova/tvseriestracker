@@ -17,10 +17,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // somethings: [{
-    //     type: mongoose.Types.ObjectId,
-    //     ref: 'Something'
-    // }],
+    shows: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'TVSeries'
+    }],
 });
 
 module.exports = mongoose.model('Users', userSchema);

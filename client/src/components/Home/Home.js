@@ -16,9 +16,12 @@ class Home extends Component {
             series: [],
             keyword: ''
         }
-    }
-
+    }  
     componentDidMount() {
+        // const currentUser = localStorage.getItem('username');
+        const currentUserId = localStorage.getItem('userId');
+        if(!currentUserId)  this.props.history.push('/');
+      
         getService.getSeries()
             .then((series) => {
                 return this.setState({ series })
@@ -38,7 +41,6 @@ class Home extends Component {
     }
 
     render() {
-        // console.log(this.state);
         return (
             <div className="home-page">
                 <Navigation />

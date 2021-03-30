@@ -13,9 +13,11 @@ class Register extends Component {
         e.preventDefault();
         let { username, email, password, rePassword } = e.target;
         userService.register(username.value, email.value, password.value, rePassword.value)
-            .then((res) => {
-                console.log(res);
-                this.props.history.push('/auth/login');
+            .then((user) => {
+                console.log(user);
+                localStorage.userId = user._id;
+                localStorage.username = user.username;
+                this.props.history.push('/home');
             })
             .catch((err) => console.log(err.message));
     }

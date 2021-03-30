@@ -4,10 +4,12 @@ import './Navigation.css';
 import * as userService from '../../services/userService';
 
 class Navigation extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-
+    constructor(props) {
+        super(props);
+        this.currentUser = localStorage.getItem('username');
+        this.currentUserId = localStorage.getItem('userId');
+    }
+    
     render() {
         return (
             <div className="navigation-box" >
@@ -15,7 +17,7 @@ class Navigation extends Component {
                 <span></span>
                 <Link to="/home/search" className="nav-list">Search</Link>
                 <span></span>
-                <Link to="/login" className="nav-list">My TV shows</Link>
+                <Link to={`/profile/${this.currentUserId}`} className="nav-list">{this.currentUser}`s TV shows</Link>
                 <span></span>
                 {/* <Link to="/register" className="nav-list">Register</Link>
                 <span></span> */}

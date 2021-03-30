@@ -25,18 +25,20 @@ initPassport(passport,
     });
 
 router.get('/logout', check.ifLoged, (req, res) => {
-    req.logOut();
-    return res.status(200).json({ok: true});
+   
+    return req.logOut()
+        .then(() => res.status(200).json({ ok: true }))
+
 });
 
 router.post('/login', check.ifNotLoged, (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
-        if(err) throw err;
-        if(!user) res.send("No user");
+        if (err) throw err;
+        if (!user) res.send("No user");
         else {
             req.logIn(user, err => {
-                if(err) throw err;
-                res.send("Success");
+                if (err) throw err;
+                res.send(user);
             })
         }
     })(req, res, next);

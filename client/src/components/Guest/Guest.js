@@ -13,7 +13,6 @@ class Guest extends Component {
         }
     }
     componentDidMount() {
-        console.log(this.state);
         getService.getSeries()
             .then((series) => {
                 return this.setState({ series })

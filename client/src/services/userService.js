@@ -4,7 +4,6 @@ const logUrl = serverUrl + endpoints.LOGIN;
 const logoutUrl = serverUrl + endpoints.LOGOUT;
 
 export const register = function (username, email, password, rePassword) {
-
     return fetch(regUrl, {
         method: 'POST',
         headers: {
@@ -16,7 +15,9 @@ export const register = function (username, email, password, rePassword) {
             password,
             rePassword
         })
-    });
+    })
+        .then((res) => res.json())
+        .catch((err) => console.log(err.message));
 }
 
 export const login = function (username, password) {
@@ -29,9 +30,14 @@ export const login = function (username, password) {
             username,
             password,
         })
-    });
+    })
+        .then((res) => res.json())
+        .catch((err) => console.log(err.message));
 }
+
 export const logout = function () {
-    console.log('logout');
-    return fetch(logoutUrl);
+    localStorage.clear();
+    fetch(logoutUrl)
+        .then((res) => res.json())
+        .catch((err) => console.log(err))
 }

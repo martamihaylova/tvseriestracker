@@ -10,7 +10,8 @@ require('./config/mongoose');
 require('./config/routes')(app);
 app.use(routes);
 // app.get('*', (req, res) => {
-//     res.json({message: 'Hello'});
+//     console.log(req);
+//     res.json({data: 'Hello'});
 // });
 
 app.listen(config.PORT, console.log.bind(console, `Server listening on port ${config.PORT}...`));

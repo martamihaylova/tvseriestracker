@@ -7,12 +7,12 @@ const Login = (props) => {
         e.preventDefault();
         let { username, password } = e.target;
         userService.login(username.value, password.value)
-            .then((res) => {
-                console.log(res);
-                // props.history.push('/home');
-            })
-            .catch((err) => console.log(err.message));
-
+            .then((user) => {
+                console.log(user);
+                localStorage.userId = user._id;
+                localStorage.username = user.username;
+                props.history.push('/home');
+            })          
     };
     return (
         <div id="loginForm" >

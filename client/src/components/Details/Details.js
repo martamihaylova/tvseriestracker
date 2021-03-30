@@ -30,7 +30,7 @@ const Details = (props) => {
             </div>
             <div className="divs">
                 <span id="image" style={{ backgroundImage: `url("${show.image?.original}")` }}>
-                    <Trackbtn />
+                    <Trackbtn data={[show]}/>
                 </span>
                 <span id="summary">{ReactHtmlParser(show.summary)}</span>
                 <div id="info">

@@ -1,8 +1,8 @@
 import './Infolist.css';
 
 const Infolist = (props) => {
-console.log(props);
-console.log(props.info);
+// console.log(props);
+// console.log(props.info);
         return (
             <div id="info-list">
                 <div>Rating: <span className="infospan">{props.info[0]}</span></div>
