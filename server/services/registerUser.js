@@ -7,7 +7,7 @@ function register(email, name, password, req, res) {
     Users.find({}, 'username')
         .then((data) => {
             let found = data.find((x) => x?.username.toLowerCase() === name.toLowerCase());
-            if (found) res.json({ messages: { error: 'Username allready exists.Please try again.' }, title: 'Register' });
+            if (found) res.json({type: 'errorBox', message: 'Username allready exists' });
         });
 
     bcrypt.hash(password, SALT_ROUNDS)
@@ -27,12 +27,12 @@ function register(email, name, password, req, res) {
                 })
                 .catch((error) => {
                     console.log(error.message);
-                    return res.json({ messages: { error: error.message }, title: 'Register' });
+                    return res.json({ type: 'errorBox', message: error.message });
                 });
         })
         .catch((err) => {
             console.log(err.message);
-            res.json({ messages: { error: 'Unsuccessful reristration.Please try again.' }, title: 'Register' });
+            res.json({type:'errorBox', message: 'Unsuccessful reristration'  });
         });
 
 }

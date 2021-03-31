@@ -17,10 +17,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    shows: [{
-        type: mongoose.Types.ObjectId,
-        ref: 'TVSeries'
-    }],
+    shows: [],
 });
 
 module.exports = mongoose.model('Users', userSchema);

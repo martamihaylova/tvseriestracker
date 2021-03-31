@@ -1,21 +1,30 @@
 import './Form.css';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+import Notifications from '../Notifications/Notifications';
 import * as userService from '../../services/userService';
 
 const Login = (props) => {
+    const [loginMessage, setLoginMessage] = useState({});
     const handleSubmit = (e) => {
         e.preventDefault();
         let { username, password } = e.target;
         userService.login(username.value, password.value)
-            .then((user) => {
-                console.log(user);
-                localStorage.userId = user._id;
-                localStorage.username = user.username;
-                props.history.push('/home');
-            })          
+            .then((res) => {
+                console.log(res);
+                if (res.info?.type === 'errorBox') {
+                    setLoginMessage(res.info)
+                } else {
+                    localStorage.userId = res._id;
+                    localStorage.username = res.username;
+                    props.history.push('/home');
+                }
+            });
     };
     return (
         <div id="loginForm" >
+            <Notifications type={loginMessage.type} >{loginMessage.message}</Notifications>
             <h1>Login</h1>
             <form className="form-inputs" onSubmit={handleSubmit} >
                 <label htmlFor="loginUsername">Username</label>

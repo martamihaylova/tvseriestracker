@@ -1,0 +1,33 @@
+
+#notifications {
+    float: left;
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    text-align: center;
+    margin: 1em;
+}
+
+.notification {
+    font-size: 2em;
+    font-weight: bolder;
+    /* color: #ffffff; */
+    display: inline-block;
+    text-align: left;
+}
+
+.notification>span {
+    display: inline-block;
+    padding:  0.5em 2em 0.5em 2em;
+    border-radius: 20px;
+}
+
+#loadingBox>span {
+    color:  rgb(51, 150, 153);
+}
+#infoBox>span {
+    color:#254051;
+}
+#errorBox>span {
+    color: rgba(255, 0, 0, 0.671);
+}

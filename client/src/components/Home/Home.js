@@ -1,7 +1,6 @@
 import './Home.css';
 import { Component } from 'react';
 
-
 import Navigation from '../Navigation/Navigation';
 import List from '../List/List';
 import Logotext from '../Logo/LogoText';
@@ -14,14 +13,15 @@ class Home extends Component {
         super(props);
         this.state = {
             series: [],
-            keyword: ''
         }
-    }  
+        this.message = 'Loading...';
+    }
     componentDidMount() {
+      
         // const currentUser = localStorage.getItem('username');
         const currentUserId = localStorage.getItem('userId');
-        if(!currentUserId)  this.props.history.push('/');
-      
+        if (!currentUserId) this.props.history.push('/');
+
         getService.getSeries()
             .then((series) => {
                 return this.setState({ series })

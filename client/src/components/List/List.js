@@ -8,7 +8,7 @@ const ListSeries = function ({series}) {
     return (
         <div className="random-shows">
             {series.map(x => {
-               x.show ? mapKey = x.show : mapKey = x;
+               x?.show ? mapKey = x.show : mapKey = x;
                 return <Link key={mapKey.id} to={`/details/${mapKey.id}`} className="random-series" style={{backgroundImage: `url("${mapKey.image?.original}")`}}>
                         <div className="text-warp">
                             <h3>{mapKey.name}</h3>

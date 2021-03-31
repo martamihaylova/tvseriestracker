@@ -1,11 +1,13 @@
 import { Component } from 'react';
 import './Form.css';
+
+import Notifications from '../Notifications/Notifications';
 import * as userService from '../../services/userService';
 
 class Register extends Component {
     constructor(props) {
         super(props);
-        //     this.state = { value: '' };
+        this.state = {};
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -13,17 +15,22 @@ class Register extends Component {
         e.preventDefault();
         let { username, email, password, rePassword } = e.target;
         userService.register(username.value, email.value, password.value, rePassword.value)
-            .then((user) => {
-                console.log(user);
-                localStorage.userId = user._id;
-                localStorage.username = user.username;
+            .then((res) => {
+                console.log(res);
+                if (res.type === 'errorBox'){
+                    return this.setState(res)
+                } else {
+                localStorage.userId = res._id;
+                localStorage.username = res.username;
                 this.props.history.push('/home');
+                }
             })
-            .catch((err) => console.log(err.message));
+            .catch((err) => console.log(err));
     }
     render() {
         return (
             <div id="registerForm" >
+                <Notifications type={this.state.type} >{this.state.message}</Notifications>
                 <h1>Register</h1>
                 <form className="form-inputs" onSubmit={this.handleSubmit} >
                     <label htmlFor="registerUsername">Username</label>

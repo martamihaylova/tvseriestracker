@@ -7,4 +7,4 @@ const showSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('TVSeries', showSchema);
+module.exports = mongoose.model('Shows', showSchema);

@@ -10,6 +10,8 @@ import Infolist from '../Infolist/Infolist';
 
 
 const Details = (props) => {
+    const currentUserId = localStorage.getItem('userId');
+        if(!currentUserId)  this.props.history.push('/');
     let [show, setShow] = useState({});
     useEffect(() => {
         getService.getOne(props.match.params.id)
@@ -30,7 +32,7 @@ const Details = (props) => {
             </div>
             <div className="divs">
                 <span id="image" style={{ backgroundImage: `url("${show.image?.original}")` }}>
-                    <Trackbtn data={[show]}/>
+                    <Trackbtn data={[currentUserId, show]}/>
                 </span>
                 <span id="summary">{ReactHtmlParser(show.summary)}</span>
                 <div id="info">

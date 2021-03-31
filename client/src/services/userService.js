@@ -32,7 +32,7 @@ export const login = function (username, password) {
         })
     })
         .then((res) => res.json())
-        .catch((err) => console.log(err.message));
+        .catch((err) => console.log(err));
 }
 
 export const logout = function () {

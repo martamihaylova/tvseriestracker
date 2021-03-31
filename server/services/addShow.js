@@ -1,19 +1,17 @@
-const Show  = require('../models/TVSeries');
+const Users = require('../models/Users');
 
 function addShow(data) {
-    // let found = data.find((x) => x?.username.toLowerCase() === name.toLowerCase());
+    // let found = show.find((x) => x?.username.toLowerCase() === name.toLowerCase());
     // if (found) 
-    let user = async() => await req.user;
-    let show = new Show(data);
-    return show.save()
-        .then(() => {
-            user.shows.push(show);
-            user.save();
-            res.redirect('/');
+    let { userId, show } = data;
+    return Users.findById(userId)
+        .then((user) => {
+            user.shows.push(show)
+            user.save()
         })
-        .catch((err) => {
-            console.log(err.message);
-        })
+        .catch((err) => console.log(err))
+    // res.redirect('/');
+
 }
 
 module.exports = addShow;

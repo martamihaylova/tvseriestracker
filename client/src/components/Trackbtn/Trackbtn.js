@@ -2,10 +2,11 @@ import "./Trackbtn.css";
 import trackingService from '../../services/trackingService';
 
 const Track = ({data}) => {
-    console.log(data[0]);
-    let show = data[0]
+    let [userId, show] = data;
     const trackingHandler = (e) => {
-        trackingService(show);
+        // let found = show.find((x) => x?.username.toLowerCase() === name.toLowerCase());
+        // if (found) 
+        trackingService(userId, show);
     }
     return (
         <div className="trackbtn" >
