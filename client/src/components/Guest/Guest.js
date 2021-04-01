@@ -20,7 +20,6 @@ class Guest extends Component {
             .catch(err => console.log(err.message));
     }
     render() {
-
         let num = 0;
         return (
             <div className="guest-view">

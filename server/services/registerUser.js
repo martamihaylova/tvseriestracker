@@ -27,7 +27,7 @@ function register(email, name, password, req, res) {
                 })
                 .catch((error) => {
                     console.log(error.message);
-                    return res.json({ type: 'errorBox', message: error.message });
+                    return res.json({ type: 'errorBox', message: 'Email duplicated' });
                 });
         })
         .catch((err) => {

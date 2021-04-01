@@ -25,9 +25,10 @@ initPassport(passport,
     });
 
 router.get('/logout', check.ifLoged, (req, res) => {
-
     return req.logOut()
-        .then(() => res.status(200).json({ ok: true }))
+        .then(() => {
+            res.status(200).json({ ok: true })
+        })
 
 });
 

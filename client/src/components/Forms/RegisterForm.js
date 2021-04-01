@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Form.css';
 
 import Notifications from '../Notifications/Notifications';
@@ -16,8 +17,8 @@ class Register extends Component {
         let { username, email, password, rePassword } = e.target;
         userService.register(username.value, email.value, password.value, rePassword.value)
             .then((res) => {
-                console.log(res);
                 if (res.type === 'errorBox'){
+                    console.log(res);
                     return this.setState(res)
                 } else {
                 localStorage.userId = res._id;
@@ -41,6 +42,7 @@ class Register extends Component {
                     <input type="password" name="password" id="registerPassword" />
                     <label>Repeat Password</label>
                     <input type="password" name="rePassword" id="registerRepeatPassword" />
+                    <p>Back to <Link to="/auth/login" className="register-link">Login</Link></p>
                     <input type="submit" value="Register" />
                 </form>
             </div>

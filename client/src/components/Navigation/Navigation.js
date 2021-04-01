@@ -17,7 +17,7 @@ class Navigation extends Component {
                 <span></span>
                 <Link to="/home/search" className="nav-list">Search</Link>
                 <span></span>
-                <Link to={`/profile/${this.currentUserId}`} className="nav-list">{this.currentUser}`s TV shows</Link>
+                <Link to={`/account/${this.currentUserId}`} className="nav-list">{this.currentUser}`s TV shows</Link>
                 <span></span>
                 {/* <Link to="/register" className="nav-list">Register</Link>
                 <span></span> */}

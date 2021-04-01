@@ -4,6 +4,7 @@ function addShow(data) {
     // let found = show.find((x) => x?.username.toLowerCase() === name.toLowerCase());
     // if (found) 
     let { userId, show } = data;
+    console.log(show);
     return Users.findById(userId)
         .then((user) => {
             user.shows.push(show)

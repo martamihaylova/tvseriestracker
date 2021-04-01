@@ -10,15 +10,14 @@ export const getSeries = (keyword = '') => {
         for (let index = 0; index < 3; index++) {
             let seriesId = Math.round(Math.random() * (1000 - 1) + 1);
             let show = fetch(baseSeriesUrl + seriesId)
-                .then((res) => res.json())
-                .then((res) => {
-                   if(res.name === 'Not Found') {                      
-                       index -= 1;
-                       return;
-                   } else {
-                       return res;
-                   }
-                });
+                .then((res) => res.json());
+                // .then((res) => {
+                //     if (res.name === 'Not Found') {
+                //         index -= 1;  
+                //     } else {
+                //         return res;
+                //     }
+                // });
             series.push(show);
         }
         let result = Promise.all(series);
@@ -27,9 +26,8 @@ export const getSeries = (keyword = '') => {
 };
 
 export const getOne = (id) => {
+    console.log('get');
     return fetch(baseSeriesUrl + id)
-        .then((res) => {
-            return res.json()
-        })
+        .then((res) => res.json())
         .catch((err) => console.log(err));
 }

@@ -2,7 +2,7 @@ function ifLoged(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
-    res.redirect('/auth/login');
+    res;
 }
 
 function ifNotLoged(req, res, next) {

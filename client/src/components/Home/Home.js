@@ -2,9 +2,9 @@ import './Home.css';
 import { Component } from 'react';
 
 import Navigation from '../Navigation/Navigation';
-import List from '../List/List';
 import Logotext from '../Logo/LogoText';
 import Searchform from '../Forms/SearchForm';
+import List from '../List/List';
 
 import * as getService from '../../services/getSeries';
 
@@ -13,15 +13,14 @@ class Home extends Component {
         super(props);
         this.state = {
             series: [],
+            currentUserId: '',
         }
-        this.message = 'Loading...';
     }
-    componentDidMount() {
-      
+    componentDidMount() {     
         // const currentUser = localStorage.getItem('username');
         const currentUserId = localStorage.getItem('userId');
         if (!currentUserId) this.props.history.push('/');
-
+        this.setState({ currentUserId })
         getService.getSeries()
             .then((series) => {
                 return this.setState({ series })
@@ -38,6 +37,7 @@ class Home extends Component {
                 return this.setState({ series, keyword })
             })
             .catch(err => console.log(err.message));
+    
     }
 
     render() {
@@ -48,7 +48,7 @@ class Home extends Component {
                     <Logotext />
                 </div>
                 {this.props.location.pathname === '/home/search' ? <Searchform props={this.props} /> : null}
-                <List series={this.state.series} />
+                <List series={this.state.series}/>
             </div>
         )
     }

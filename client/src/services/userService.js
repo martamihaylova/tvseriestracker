@@ -39,5 +39,6 @@ export const logout = function () {
     localStorage.clear();
     fetch(logoutUrl)
         .then((res) => res.json())
+        .then((res) => console.log(res))
         .catch((err) => console.log(err))
 }

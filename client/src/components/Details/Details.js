@@ -11,19 +11,20 @@ import Infolist from '../Infolist/Infolist';
 
 const Details = (props) => {
     const currentUserId = localStorage.getItem('userId');
-        if(!currentUserId)  this.props.history.push('/');
+    if (!currentUserId) props.history.push('/');
     let [show, setShow] = useState({});
     useEffect(() => {
         getService.getOne(props.match.params.id)
             .then(res => setShow(res));
     }, [props.match]);
 
+    console.log(show);
     let infoArray = [show.rating?.average,
     show.network?.name,
     show.network?.country.name,
     show.premiered,
     show.status];
-    
+
     return (
         <div className="details-view">
             <Navigation />
@@ -32,8 +33,8 @@ const Details = (props) => {
             </div>
             <div className="divs">
                 <span id="image" style={{ backgroundImage: `url("${show.image?.original}")` }}>
-                    <Trackbtn data={[currentUserId, show]}/>
-                </span>
+                    <Trackbtn data={[currentUserId, show.id, show.name]} />
+                /</span>
                 <span id="summary">{ReactHtmlParser(show.summary)}</span>
                 <div id="info">
                     <Infolist info={infoArray} />

@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import Details from './components/Details/Details';
 import Login from './components/Forms/LoginForm';
 import Register from './components/Forms/RegisterForm';
+import Account from './components/Account/Account';
 
 class App extends Component {
   // constructor(props) {
@@ -23,9 +24,10 @@ class App extends Component {
         <Switch>
           <Route path="/" component={Start} exact />
           <Route path="/guest" component={Guest} exact />
-          <Route path="/home/search/:keyword" component={Home} />
-          <Route path="/home" component={Home} />
-          <Route path="/details/:id" component={Details} />
+          <Route path="/home/search/:keyword" component={Home} exact/>
+          <Route path="/home" component={Home} exact/>
+          <Route path="/details/:id" component={Details} exact/>
+          <Route path="/account/:id" component={Account} exact/>
           <Route path="/auth/login" component={Login} exact />
           <Route path="/auth/register" component={Register} exact />
         </Switch>
