@@ -24,10 +24,10 @@ class App extends Component {
         <Switch>
           <Route path="/" component={Start} exact />
           <Route path="/guest" component={Guest} exact />
-          <Route path="/home/search/:keyword" component={Home} exact/>
-          <Route path="/home" component={Home} exact/>
+          <Route path="/home/search/:keyword" component={Home} />
+          <Route path="/home" component={Home} />
           <Route path="/details/:id" component={Details} exact/>
-          <Route path="/account/:id" component={Account} exact/>
+          <Route path="/account/:id" component={Account} />
           <Route path="/auth/login" component={Login} exact />
           <Route path="/auth/register" component={Register} exact />
         </Switch>

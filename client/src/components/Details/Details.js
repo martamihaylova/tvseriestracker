@@ -15,10 +15,15 @@ const Details = (props) => {
     let [show, setShow] = useState({});
     useEffect(() => {
         getService.getOne(props.match.params.id)
-            .then(res => setShow(res));
-    }, [props.match]);
+            .then(res => {
+                res.image ? setShow(res) : props.history.push('/home');
+            })
+            .catch(err => {
+                console.log(err);
+                props.history.push('/home');
+            })
+    }, [props]);
 
-    console.log(show);
     let infoArray = [show.rating?.average,
     show.network?.name,
     show.network?.country.name,
@@ -32,9 +37,10 @@ const Details = (props) => {
                 <Logotext />
             </div>
             <div className="divs">
-                <span id="image" style={{ backgroundImage: `url("${show.image?.original}")` }}>
-                    <Trackbtn data={[currentUserId, show.id, show.name]} />
-                /</span>
+                <span>
+                <img id="image" src={show.image?.original} alt=""/>
+                <Trackbtn data={[currentUserId, show.id, show.name]} />
+                </span>
                 <span id="summary">{ReactHtmlParser(show.summary)}</span>
                 <div id="info">
                     <Infolist info={infoArray} />

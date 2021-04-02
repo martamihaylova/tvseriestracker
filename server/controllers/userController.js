@@ -4,7 +4,7 @@ const router = Router();
 const Users = require('../models/Users');
 
 router.get('/:id', check.ifNotLoged, (req, res) => {
-    console.log(req.params);
+    // console.log(req.params);
     Users.findById(req.params.id)
         .then((user) => res.json(user))
         .catch((err) => console.log(err.message));

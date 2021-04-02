@@ -1,5 +1,5 @@
 import "./Trackbtn.css";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import trackingService from '../../services/trackingService';
 import getUser from '../../services/getUser';
 
@@ -9,17 +9,16 @@ const Track = ({ data }) => {
     getUser(userId)
         .then((res) => {
             let found = res.shows.find((x) => x?.id === showId);
-            console.log(found);
-            if (found) {
+            if (found && found?.name) {
+                console.log(found);
                 setBtnName('Tracked')
             }
         })
         .catch(err => console.log(err))
 
     const trackingHandler = (e) => {
-        console.log('hello');
         trackingService(userId, showId, showName)
-            .then(() => setBtnName('Tracked'))
+        .then(() =>  setBtnName('Tracked'))
     }
 
     return (

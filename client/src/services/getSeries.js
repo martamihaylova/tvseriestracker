@@ -26,7 +26,6 @@ export const getSeries = (keyword = '') => {
 };
 
 export const getOne = (id) => {
-    console.log('get');
     return fetch(baseSeriesUrl + id)
         .then((res) => res.json())
         .catch((err) => console.log(err));
