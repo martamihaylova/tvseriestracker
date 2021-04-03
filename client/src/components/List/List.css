@@ -29,7 +29,7 @@
     padding: 50px;
 }
 
-.random-series h3 {
+.random-series #title {
     margin: auto;
     text-decoration: underline;
 }

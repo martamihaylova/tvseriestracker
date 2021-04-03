@@ -1,6 +1,7 @@
 import { baseSeriesUrl, searchUrl } from './api'
 
 export const getSeries = (keyword = '') => {
+
     if (keyword !== '') {
         return fetch(searchUrl + keyword)
             .then((res) => res.json())
@@ -11,13 +12,6 @@ export const getSeries = (keyword = '') => {
             let seriesId = Math.round(Math.random() * (1000 - 1) + 1);
             let show = fetch(baseSeriesUrl + seriesId)
                 .then((res) => res.json());
-                // .then((res) => {
-                //     if (res.name === 'Not Found') {
-                //         index -= 1;  
-                //     } else {
-                //         return res;
-                //     }
-                // });
             series.push(show);
         }
         let result = Promise.all(series);

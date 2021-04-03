@@ -1,5 +1,5 @@
 import { serverUrl, endpoints } from './api.js';
-const addUrl = serverUrl + endpoints.ADD_SHOW;
+const addUrl = serverUrl + endpoints.SHOW;
 
 function trackingServices(userId, currentShowId, currentShowName) {
         return fetch(addUrl, {

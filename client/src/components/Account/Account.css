@@ -1,0 +1,9 @@
+.collection-body{
+    background-size: 100% 100%;
+    min-height: 170vh;
+    margin: 0;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}

@@ -1,0 +1,82 @@
+.collection-cards{
+    width: 90em;
+    display: flex;
+    --distance: -4rem;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    /* padding: 50px; */
+}
+
+.collection-card{
+    /* height: 230px;
+    width: 100px; */
+    background-color: #121e25;
+    /* background-size: 100% 100%; */
+    border-radius: 1rem;
+    padding: 2rem; 
+    box-shadow: 4px 4px 15px 2px black;
+    transition: 1s;
+    margin-left: var(--distance);
+}
+
+/* .collection-card:not(:first-child){
+} */
+
+.collection-card:hover{
+    transform: translateY(-1rem);
+    background-color:  #254051;
+}
+
+.collection-card:hover > .untrackbtn{
+   visibility: visible;
+}
+
+.collection-card:hover > #collection-text{
+    visibility: hidden;
+ }
+
+.collection-card:hover ~ .collection-card{
+    transform: translateX(calc(var(--distance)* -1));
+}
+
+#collection-image{
+    /* margin-top: -35px; */
+    /* margin-left: -25px; */
+    width: 180px;
+    height: 250px;
+    border-radius: 10%;
+}
+
+#collection-text{
+    visibility: visible;
+    /* position: relative; */
+    width: 100px;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+    color: darkturquoise;
+}
+
+.untrackbtn{
+   visibility: hidden;
+   position: absolute;
+    font-size: calc(25px + 2vmin);
+    font-family: 'Bebas Neue', cursive;
+    color: darkblue;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    opacity: 0.7;
+    width: 140px;
+    height: 70px;
+    cursor: pointer;
+    font-weight: bolder;
+    border-radius: 25px; 
+    bottom: 30px;  
+}
+.btnText{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 8%;
+}

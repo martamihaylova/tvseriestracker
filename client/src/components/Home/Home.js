@@ -16,7 +16,7 @@ class Home extends Component {
             currentUserId: '',
         }
     }
-    componentDidMount() {     
+    componentDidMount() {
         // const currentUser = localStorage.getItem('username');
         const currentUserId = localStorage.getItem('userId');
         if (!currentUserId) this.props.history.push('/');
@@ -37,7 +37,7 @@ class Home extends Component {
                 return this.setState({ series, keyword })
             })
             .catch(err => console.log(err.message));
-    
+
     }
 
     render() {
@@ -48,7 +48,12 @@ class Home extends Component {
                     <Logotext />
                 </div>
                 {this.props.location.pathname === '/home/search' ? <Searchform props={this.props} /> : null}
-                <List series={this.state.series}/>
+                {this.state.series.length > 0 ? (
+                    <List series={this.state.series} />
+                ) : (
+                    <h1>There are no shows found.</h1>
+                )
+                }
             </div>
         )
     }

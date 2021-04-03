@@ -4,13 +4,13 @@ import trackingService from '../../services/trackingService';
 import getUser from '../../services/getUser';
 
 const Track = ({ data }) => {
-    let [userId, showId, showName] = data;
+    const [userId, showId, showName] = data;
     const [btnName, setBtnName] = useState('Track');
     getUser(userId)
         .then((res) => {
             let found = res.shows.find((x) => x?.id === showId);
             if (found && found?.name) {
-                console.log(found);
+             
                 setBtnName('Tracked')
             }
         })

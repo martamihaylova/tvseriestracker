@@ -6,7 +6,7 @@ const endpoints = {
     REGISTER: 'auth/register',
     LOGIN: 'auth/login',
     LOGOUT: 'auth/logout',
-    ADD_SHOW: 'add',
+    SHOW: 'show/',
     USER: 'account/'
 }
 
