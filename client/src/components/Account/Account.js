@@ -1,4 +1,5 @@
 import './Account.css';
+import { Link } from 'react-router-dom';
 
 import Navigation from '../Navigation/Navigation';
 import Logotext from '../Logo/LogoText';
@@ -32,7 +33,7 @@ const Account = function (props) {
 
     return (
         <div className="home-page">
-            <Navigation />
+            <Navigation currentlocation="account"/>
             <div className="home-logo-text">
                 <Logotext />
             </div>
@@ -43,8 +44,8 @@ const Account = function (props) {
             ) : (
                 <div>
                     <h1>Have nothing tracked yet?</h1>
-                    <h1>You can stare at some random shows in the home section
-                         or search for favorites.</h1>
+                    <h1>You can stare at some random shows in the <Link to="/home" style={{color: 'darkblue'}}>Home</Link> section
+                         or <Link to="/home/search" style={{color: 'darkblue'}}>Search</Link> for favorites.</h1>
                     <h1>Happy wasting time!</h1>
                 </div>
             )

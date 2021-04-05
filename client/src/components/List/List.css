@@ -1,3 +1,11 @@
+.random-shows {
+    width: 90em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
 .random-series {
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -20,13 +28,6 @@
 .random-series:hover > .text-warp{
     transform: scale(1.1);
     top: 55%;
-}
-.random-shows {
-    width: 90em;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 50px;
 }
 
 .random-series #title {

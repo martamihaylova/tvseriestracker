@@ -15,21 +15,30 @@ class Home extends Component {
             series: [],
             currentUserId: '',
         }
+        this.refreshHandler= this.refreshHandler.bind(this);
     }
-    componentDidMount() {
-        // const currentUser = localStorage.getItem('username');
-        const currentUserId = localStorage.getItem('userId');
-        if (!currentUserId) this.props.history.push('/');
-        this.setState({ currentUserId })
+    refreshHandler(){
         getService.getSeries()
             .then((series) => {
                 return this.setState({ series })
             })
             .catch(err => console.log(err.message));
     }
+    componentDidMount() {
+        // const currentUser = localStorage.getItem('username');
+        const currentUserId = localStorage.getItem('userId');
+        if (!currentUserId) this.props.history.push('/');
+        this.setState({ currentUserId });
+        this.refreshHandler()
+        // getService.getSeries()
+        //     .then((series) => {
+        //         return this.setState({ series })
+        //     })
+        //     .catch(err => console.log(err.message));
+    }
     componentDidUpdate(prevProps, prevState) {
         let keyword = this.props.match.params.keyword;
-        if (keyword === prevState.keyword || keyword === '' || !keyword) {
+        if (keyword === prevState.keyword) {
             return;
         }
         getService.getSeries(keyword)
@@ -43,7 +52,7 @@ class Home extends Component {
     render() {
         return (
             <div className="home-page">
-                <Navigation />
+                <Navigation handler={this.refreshHandler}/>
                 <div className="home-logo-text">
                     <Logotext />
                 </div>

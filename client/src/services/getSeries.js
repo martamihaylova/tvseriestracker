@@ -7,6 +7,7 @@ export const getSeries = (keyword = '') => {
             .then((res) => res.json())
             .catch((err) => console.log(err));
     } else {
+        console.log('hello2');
         let series = [];
         for (let index = 0; index < 3; index++) {
             let seriesId = Math.round(Math.random() * (1000 - 1) + 1);

@@ -9,20 +9,25 @@ class Navigation extends Component {
         this.currentUser = localStorage.getItem('username');
         this.currentUserId = localStorage.getItem('userId');
     }
-    
     render() {
+        console.log(this.props);
         return (
             <div className="navigation-box" >
                 <Link to="/home" className="nav-list">Home</Link>
                 <span></span>
-                <Link to="/home/search" className="nav-list">Search</Link>
+                <Link to="/home/search" className="nav-list">Search titles</Link>
+                <span></span>
+                {this.props.currentlocation === "account" ?
+                    (
+                        <Link to={`/account/${this.currentUserId}`} className="nav-list">Sort by name</Link>
+                        
+                    ) : (
+                        <Link to="/home" className="nav-list" onClick={this.props.handler} >Reload random</Link>
+                    )
+                }
                 <span></span>
                 <Link to={`/account/${this.currentUserId}`} className="nav-list">{this.currentUser}`s TV shows</Link>
                 <span></span>
-                {/* <Link to="/register" className="nav-list">Register</Link>
-                <span></span> */}
-                {/* <Link to="/account" className="nav-list">Wellcome Pesho</Link>
-                <span></span> */}
                 <Link to="/" onClick={userService.logout} className="nav-list">Logout</Link>
             </div>
 
