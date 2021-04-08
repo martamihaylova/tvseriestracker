@@ -1,4 +1,4 @@
-tvseriestracker
+# tvseriestracker
 
 A web app to track your favorite television series.
 
