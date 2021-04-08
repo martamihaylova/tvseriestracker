@@ -3,8 +3,8 @@ import ReactHtmlParser from 'react-html-parser';
 import { useEffect, useState } from 'react';
 import * as getService from '../../services/getSeries';
 
-import Logotext from '../Logo/LogoText';
-import Navigation from '../Navigation/Navigation';
+import Logotext from '../Shared/Logo/LogoText';
+import Navigation from '../Shared/Navigation/Navigation';
 import Trackbtn from '../Trackbtn/Trackbtn';
 import Infolist from '../Infolist/Infolist';
 

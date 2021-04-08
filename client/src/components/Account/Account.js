@@ -1,8 +1,8 @@
 import './Account.css';
 import { Link } from 'react-router-dom';
 
-import Navigation from '../Navigation/Navigation';
-import Logotext from '../Logo/LogoText';
+import Navigation from '../Shared/Navigation/Navigation';
+import Logotext from '../Shared/Logo/LogoText';
 import Collection from './Collection';
 
 import { useEffect, useState } from 'react';
@@ -12,15 +12,17 @@ import getUsersCollection from '../../services/getUsersClloection';
 const Account = function (props) {
     const [user, setUser] = useState({});
     const [series, setSeries] = useState([]);
+    const [sorted, setSorted] = useState([]);
     useEffect(() => {
+        console.log(props);
         getUser(props.match.params.id)
             .then((result) => {
-                // console.log(result);
                 setUser(result);
                 getUsersCollection(result.shows)
                     .then((shows) => {
-                        // console.log(shows);
-                        setSeries(shows);
+                        props.location.pathname.includes('sort') ?
+                            sortHandler(shows) :
+                            setSeries(shows)
                     })
                     .catch(err => {
                         console.log(err);
@@ -31,21 +33,27 @@ const Account = function (props) {
             });
     }, [props]);
 
+    function sortHandler(shows) {
+        let sortedSeries;
+        sortedSeries = shows.sort((a, b) => a.name.localeCompare(b.name));
+        setSeries(sortedSeries);
+    }
+
     return (
         <div className="home-page">
-            <Navigation currentlocation="account"/>
+            <Navigation currentlocation="account" />
             <div className="home-logo-text">
                 <Logotext />
             </div>
             {series.length > 0 ? (
                 <div className="collection-body">
-                    <Collection data={series} shows={user.shows} />
+                    <Collection data={sorted.length === 0 ? series : sorted} shows={user.shows} />
                 </div>
             ) : (
                 <div>
                     <h1>Have nothing tracked yet?</h1>
-                    <h1>You can stare at some random shows in the <Link to="/home" style={{color: 'darkblue'}}>Home</Link> section
-                         or <Link to="/home/search" style={{color: 'darkblue'}}>Search</Link> for favorites.</h1>
+                    <h1>You can stare at some random shows in the <Link to="/home" style={{ color: 'darkblue' }}>Home</Link> section
+                         or <Link to="/home/search" style={{ color: 'darkblue' }}>Search</Link> for favorites.</h1>
                     <h1>Happy wasting time!</h1>
                 </div>
             )

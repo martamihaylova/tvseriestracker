@@ -2,11 +2,7 @@ import { baseSeriesUrl, searchUrl } from './api'
 
 export const getSeries = (keyword = '') => {
 
-    if (keyword !== '') {
-        return fetch(searchUrl + keyword)
-            .then((res) => res.json())
-            .catch((err) => console.log(err));
-    } else {
+    if (keyword === '') {
         console.log('hello2');
         let series = [];
         for (let index = 0; index < 3; index++) {
@@ -16,8 +12,14 @@ export const getSeries = (keyword = '') => {
             series.push(show);
         }
         let result = Promise.all(series);
-        return result;
+        
+        return result;     
+    } else {
+        return fetch(searchUrl + keyword)
+            .then((res) => res.json())
+            .catch((err) => console.log(err));
     }
+
 };
 
 export const getOne = (id) => {

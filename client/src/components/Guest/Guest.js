@@ -2,7 +2,7 @@ import './Guest.css';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Logotext from '../Logo/LogoText';
+import Logotext from '../Shared/Logo/LogoText';
 import * as getService from '../../services/getSeries';
 
 class Guest extends Component {

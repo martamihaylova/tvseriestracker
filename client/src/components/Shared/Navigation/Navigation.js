@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
-import * as userService from '../../services/userService';
+import * as userService from '../../../services/userService';
 
 class Navigation extends Component {
     constructor(props) {
@@ -10,7 +10,6 @@ class Navigation extends Component {
         this.currentUserId = localStorage.getItem('userId');
     }
     render() {
-        console.log(this.props);
         return (
             <div className="navigation-box" >
                 <Link to="/home" className="nav-list">Home</Link>
@@ -19,10 +18,10 @@ class Navigation extends Component {
                 <span></span>
                 {this.props.currentlocation === "account" ?
                     (
-                        <Link to={`/account/${this.currentUserId}`} className="nav-list">Sort by name</Link>
+                        <Link to={`/account/${this.currentUserId}/sort`} className="nav-list" hello="hello">Sort by name</Link>
                         
                     ) : (
-                        <Link to="/home" className="nav-list" onClick={this.props.handler} >Reload random</Link>
+                        <Link to="/home" className="nav-list" onClick={this.props.refresh} >Reload random</Link>
                     )
                 }
                 <span></span>

@@ -1,8 +1,8 @@
 import './Home.css';
 import { Component } from 'react';
 
-import Navigation from '../Navigation/Navigation';
-import Logotext from '../Logo/LogoText';
+import Navigation from '../Shared/Navigation/Navigation';
+import Logotext from '../Shared/Logo/LogoText';
 import Searchform from '../Forms/SearchForm';
 import List from '../List/List';
 
@@ -30,11 +30,6 @@ class Home extends Component {
         if (!currentUserId) this.props.history.push('/');
         this.setState({ currentUserId });
         this.refreshHandler()
-        // getService.getSeries()
-        //     .then((series) => {
-        //         return this.setState({ series })
-        //     })
-        //     .catch(err => console.log(err.message));
     }
     componentDidUpdate(prevProps, prevState) {
         let keyword = this.props.match.params.keyword;
@@ -46,13 +41,12 @@ class Home extends Component {
                 return this.setState({ series, keyword })
             })
             .catch(err => console.log(err.message));
-
     }
 
     render() {
         return (
             <div className="home-page">
-                <Navigation handler={this.refreshHandler}/>
+                <Navigation refresh={this.refreshHandler}/>
                 <div className="home-logo-text">
                     <Logotext />
                 </div>

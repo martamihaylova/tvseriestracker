@@ -1,5 +1,5 @@
 .details-view{
-    background-image: url('../Start/background1.jpg');
+    background-image: url('../../static/background1.jpg');
     background-repeat: no-repeat;
     background-size: 100% 50%;
     height: 100vh;

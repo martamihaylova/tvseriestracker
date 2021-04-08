@@ -10,10 +10,10 @@
     /* bottom: 20%; */
   }
 #background1{
-    background-image: url("./background1.jpg");
+    background-image: url("../../static/background1.jpg");
   }
 #background2{
-    background-image: url("./background2.jpg");
+    background-image: url("../../static/background1.jpg");
   }
 
 .start-logo-text{

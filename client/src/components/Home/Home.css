@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;  
-    background-image: url("./background3.jpg");
+    background-image: url("../../static/background3.jpg");
 }
 
 .home-logo-text{

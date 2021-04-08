@@ -1,8 +1,8 @@
 import './Start.css';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
-import Logo from '../Logo/Logo';
-import Logotext from '../Logo/LogoText';
+import Logo from '../Shared/Logo/Logo';
+import Logotext from '../Shared/Logo/LogoText';
 
 class Start extends Component {
     constructor() {
