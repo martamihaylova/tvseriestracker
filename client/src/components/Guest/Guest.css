@@ -22,7 +22,6 @@
 .cards{
     margin-top: -15%;
     display: flex;
-    /* justify-content: flex-start; */
     flex-wrap: wrap;   
 }
 .card{
@@ -63,7 +62,6 @@
     height: 500px;
 }
 #c3:hover{
-    /* margin-top: 30%; */
     position: relative;
     z-index: 3;
     cursor: pointer;

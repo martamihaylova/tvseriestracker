@@ -7,7 +7,6 @@
     align-items: center;
     justify-content: center;
     font-size: calc(50px + 2vmin);
-    /* bottom: 20%; */
   }
 #background1{
     background-image: url("../../static/background1.jpg");

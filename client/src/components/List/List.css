@@ -11,7 +11,6 @@
     background-size: 100% 100%;
     text-decoration: none;
     cursor: pointer;
-    /* width: 400px; */
     text-align: center;
     border-radius: 25px;
     margin-left: 20px;
@@ -36,7 +35,6 @@
 }
 .text-warp{
     font-size: calc(8px + 2vmin);
-    /* text-size-adjust: 80%; */
     font-weight: bold;
     color: darkblue;
     position: relative;
@@ -48,5 +46,4 @@
     border-radius: 25px;
     margin-left: 50px;
     height: 140px;
-    /* align-items: center; */
 }

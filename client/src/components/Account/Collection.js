@@ -1,19 +1,21 @@
 import './Collection.css';
 import { Link, useHistory } from 'react-router-dom';
+import { useContext } from 'react';
 
+import AuthContext from '../../contexts/AuthContext';
 import untrackService from '../../services/untrackService';
 
 const Collection = function ({ data, shows }) {
-    const currentUserId = localStorage.getItem('userId');
+    const {userId} = useContext(AuthContext);
     let history = useHistory();
     const untrackHandler = (e) => {
         if (e.target.className === 'btnText') {
             let found = shows.find(x => x.id == e.target.id);
             console.log(found);
-            untrackService(currentUserId, found)
+            untrackService(userId, found)
                 .then((res) => {
                     console.log(res);
-                    history.push(`/account/${currentUserId}`)
+                    history.push(`/account/${userId}`)
                 })
                 .catch(err => console.log(err))
         }
