@@ -1,7 +1,6 @@
 import './Home.css';
 import { Component } from 'react';
 
-import AuthContext from '../../contexts/AuthContext';
 import Navigation from '../Shared/Navigation/Navigation';
 import Logotext from '../Shared/Logo/LogoText';
 import Searchform from '../Forms/SearchForm';
@@ -26,8 +25,9 @@ class Home extends Component {
             .catch(err => console.log(err.message));
     }
     componentDidMount() {
-        console.log(this.context);
-        const currentUserId = this.context.userId;
+        // const currentUser = localStorage.getItem('username');
+        const currentUserId = localStorage.getItem('userId');
+        if (!currentUserId) this.props.history.push('/');
         this.setState({ currentUserId });
         this.refreshHandler()
     }
@@ -61,5 +61,4 @@ class Home extends Component {
         )
     }
 }
-Home.contextType = AuthContext;
 export default Home;

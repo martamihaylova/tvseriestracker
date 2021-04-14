@@ -12,6 +12,7 @@ import getUsersCollection from '../../services/getUsersClloection';
 const Account = function (props) {
     const [user, setUser] = useState({});
     const [series, setSeries] = useState([]);
+    const [sorted, setSorted] = useState([]);
     useEffect(() => {
         console.log(props);
         getUser(props.match.params.id)
@@ -46,7 +47,7 @@ const Account = function (props) {
             </div>
             {series.length > 0 ? (
                 <div className="collection-body">
-                    <Collection data={series} shows={user.shows} />
+                    <Collection data={sorted.length === 0 ? series : sorted} shows={user.shows} />
                 </div>
             ) : (
                 <div>

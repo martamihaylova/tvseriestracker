@@ -46,7 +46,7 @@ router.post('/login', check.ifNotLoged, (req, res, next) => {
 });
 
 router.post('/register', check.ifNotLoged, (req, res) => {
-    // console.log(req.body);
+    console.log(req.body);
     let { username, email, password, rePassword } = req.body;
     if (password !== rePassword){
     res.json({ type: 'errorBox', message: 'Missmatch passwords' });
