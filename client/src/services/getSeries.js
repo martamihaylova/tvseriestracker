@@ -3,7 +3,6 @@ import { baseSeriesUrl, searchUrl } from './api'
 export const getSeries = (keyword = '') => {
 
     if (keyword === '') {
-        console.log('hello2');
         let series = [];
         for (let index = 0; index < 3; index++) {
             let seriesId = Math.round(Math.random() * (1000 - 1) + 1);

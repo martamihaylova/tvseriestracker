@@ -12,7 +12,6 @@ const Login = (props) => {
         let { username, password } = e.target;
         userService.login(username.value, password.value)
             .then((res) => {
-                console.log(res);
                 if (res.info?.type === 'errorBox') {
                     setLoginMessage(res.info)
                 } else {

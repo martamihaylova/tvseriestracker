@@ -14,7 +14,6 @@ const Account = function (props) {
     const [series, setSeries] = useState([]);
     const [sorted, setSorted] = useState([]);
     useEffect(() => {
-        console.log(props);
         getUser(props.match.params.id)
             .then((result) => {
                 setUser(result);

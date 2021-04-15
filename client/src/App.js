@@ -11,12 +11,6 @@ import Register from './components/Forms/RegisterForm';
 import Account from './components/Account/Account';
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     series: []
-  //   }
-  // }
 
   render() {
     return (

@@ -8,7 +8,7 @@ const Collection = function ({ data, shows }) {
     let history = useHistory();
     const untrackHandler = (e) => {
         if (e.target.className === 'btnText') {
-            let found = shows.find(x => x.id == e.target.id);
+            let found = shows.find(x => Number(x.id) === Number(e.target.id));
             console.log(found);
             untrackService(currentUserId, found)
                 .then((res) => {
