@@ -2,6 +2,13 @@
 
 https://tvseriestracker.netlify.app/
 
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+
+## General info
+
 A web app to track your favorite television series.
 
 Using tvmaze.com api to access details on each of the shows providing cover photos and overviews. 
