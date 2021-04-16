@@ -1,5 +1,7 @@
 # tvseriestracker
 
+https://tvseriestracker.netlify.app/
+
 A web app to track your favorite television series.
 
 Using tvmaze.com api to access details on each of the shows providing cover photos and overviews. 
