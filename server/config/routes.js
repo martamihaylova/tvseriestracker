@@ -11,6 +11,6 @@ module.exports = (app) => {
         res.send('Hello world');
     });
     app.get('*', (req, res) => {
-        res.status(404).json({message: 'Error'});
+        res.status(404).json({type: 'errorBox', message: 'Error'});
     });
 };

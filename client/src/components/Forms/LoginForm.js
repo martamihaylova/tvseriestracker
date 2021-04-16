@@ -10,6 +10,10 @@ const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let { username, password } = e.target;
+        if (username.value === '' || password.value === '') {
+            setLoginMessage({ type: 'errorBox', message: 'Invalid input' });
+            return;
+        }
         userService.login(username.value, password.value)
             .then((res) => {
                 if (res.info?.type === 'errorBox') {
