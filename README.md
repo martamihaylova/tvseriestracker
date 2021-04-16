@@ -4,6 +4,7 @@ https://tvseriestracker.netlify.app/
 
 ## Table of contents
 * [General info](#general-info)
+* [Content](#content)
 * [Technologies](#technologies)
 * [Setup](#setup)
 
@@ -20,6 +21,14 @@ You are able to add a show manually or by searching using the api and adding aut
 Possible future ideas include friends watchlist and sharing options.
 
 User accounts are free and can be created with just username, email and password, they are only used to store the data in the database to each user and allow for a personalised experience in the showlist.
+
+## Content
+
+* Guest page
+* Login/Register page
+* Home/Search page
+* Details page
+* Users collection page
 
 ## Technologies
 Project is created with:
