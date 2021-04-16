@@ -4,6 +4,7 @@ https://tvseriestracker.netlify.app/
 
 ## Table of contents
 * [General info](#general-info)
+* [Screenshot](profile-page-preview)
 * [Content](#content)
 * [Technologies](#technologies)
 * [Setup](#setup)
