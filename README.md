@@ -21,6 +21,8 @@ Possible future ideas include friends watchlist and sharing options.
 
 User accounts are free and can be created with just username, email and password, they are only used to store the data in the database to each user and allow for a personalised experience in the showlist.
 
+## Setup
+To run this project, install it locally using npm:
 ```
 $ install MongoDB from here https://www.mongodb.com/try/download/community
 $ backend/ -> npm i -> npm run start
