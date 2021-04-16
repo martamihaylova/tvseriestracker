@@ -46,7 +46,7 @@ Project is created with:
 To run this project, install it locally using npm:
 ```
 $ install MongoDB from here https://www.mongodb.com/try/download/community
-$ backend/ -> npm i -> npm run start
 $ frontend/ -> npm i -> npm run start
-Open http://localhost in the browser.
+$ backend/ -> hosted
+Open http://localhost/3000 in the browser.
 ```
