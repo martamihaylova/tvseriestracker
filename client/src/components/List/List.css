@@ -15,7 +15,7 @@
     border-radius: 25px;
     height: 450px;
     flex-basis: 25%;
-    margin-top: 200px;
+    margin-top: 230px;
 }
 
 .random-series:hover {
@@ -43,7 +43,7 @@
     width: 11em;
     text-align: center;
     border-radius: 25px;
-    margin-left: 30px;
+    margin-left: 25px;
     height: 140px;
     /* align-items: center; */
 }
