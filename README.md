@@ -21,6 +21,13 @@ Possible future ideas include friends watchlist and sharing options.
 
 User accounts are free and can be created with just username, email and password, they are only used to store the data in the database to each user and allow for a personalised experience in the showlist.
 
+## Technologies
+Project is created with:
+* MongoDB 
+* Express.js
+* React.js
+* Node.js
+
 ## Setup
 To run this project, install it locally using npm:
 ```
