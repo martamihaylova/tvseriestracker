@@ -7,8 +7,10 @@ module.exports = (app) => {
     app.use('/auth', authController);
     app.use('/show', addAndRemoveController);
     app.use('/account', userController);
+    app.get('/', (req, res) => {
+        res.send('Hello world');
+    });
     app.get('*', (req, res) => {
-        console.log(req);
         res.status(404).json({message: 'Error'});
     });
 };

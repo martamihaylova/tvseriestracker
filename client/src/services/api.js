@@ -1,6 +1,6 @@
 const baseSeriesUrl = 'https://api.tvmaze.com/shows/';
 const searchUrl = 'https://api.tvmaze.com/search/shows?q=';
-const serverUrl = 'https://localhost:5001/';
+const serverUrl = 'https://tvseries-server.herokuapp.com/';
 
 const endpoints = {
     REGISTER: 'auth/register',

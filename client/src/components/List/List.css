@@ -1,9 +1,9 @@
 .random-shows {
-    width: 90em;
+    width: 80em;
+    /* height: 700px; */
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 50px;
 }
 
 .random-series {
@@ -11,14 +11,11 @@
     background-size: 100% 100%;
     text-decoration: none;
     cursor: pointer;
-    /* width: 400px; */
     text-align: center;
     border-radius: 25px;
-    margin-left: 20px;
-    height: 500px;
+    height: 450px;
     flex-basis: 25%;
     margin-top: 200px;
-    width: 10em;
 }
 
 .random-series:hover {
@@ -46,7 +43,7 @@
     width: 11em;
     text-align: center;
     border-radius: 25px;
-    margin-left: 50px;
+    margin-left: 30px;
     height: 140px;
     /* align-items: center; */
 }
